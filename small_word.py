@@ -13,19 +13,19 @@ K = 4
 Wmax = 40
 mu = 0
 deltaW = 0.01
-tauw  = 400
+tauw  = 1500
 tautheta= 9000
 Gamma = 1
 I = 0.1
-uw = 1
-utheta = 0.1
+uw = 0
+utheta = 1
 
 # Gerando vetores zerados
 V = np.zeros(N)
 X = np.zeros(N)
 XX = np.zeros(N)   
 Theta = np.random.uniform(0,0.24,(N))
-W = np.random.uniform(0,1,(N,N))
+W = np.random.uniform(0,5,(N,N))
 #print (W)
 
 
@@ -45,6 +45,8 @@ c = []
 
 texto ="N_" + str(N) + \
  " P_" + str(P) + "taut_" + str(tautheta) + " viz_" + str(K) +  "uw_" + str(uw) + "tauw_" + str(tauw)+"I_"+str(I)
+
+f = open(texto +'.txt','w')
 
 def time_step():
     W_med = 0.
