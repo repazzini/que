@@ -17,8 +17,8 @@ tauw  = 1500
 tautheta= 9000
 Gamma = 1
 I = 0.1
-uw = 0
-utheta = 1
+uw = 1
+utheta = 0.1
 
 # Gerando vetores zerados
 V = np.zeros(N)
@@ -78,7 +78,7 @@ def time_step():
         Theta_med += Theta[i]
                     
             
-    W_med = W_med/float(K*N)
+    W_med = W_med/float(N*N)
     Theta_med = Theta_med/float(N)  
     rho = rho/float(N)
 
