@@ -76,9 +76,9 @@ def time_step():
         Theta_med += Theta[i]
                     
 #     W_med = W_med/float(N*N)
-    W_med = np.mean(W_med)
-    Theta_med = np.mean(Theta_med)
-    rho = np.mean(rho)
+    W_med = np.mean(W)
+    Theta_med = np.mean(Theta)
+    rho = rho/float(N)
 
     # se rho eh zero, entao um neuronio aleatorio eh ativado
     if rho < 1./float(N):
