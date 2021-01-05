@@ -64,22 +64,20 @@ def time_step():
 
         Theta[i] = Theta[i] - (1/tautheta)*Theta[i] + utheta*Theta[i]*X[i]         
         V[i] = (I + mu*V[i] + somaW/K)* (1-X[i]) #função potencial
-        V[i] = (I + mu*V[i] + somaW/K)* (1-X[i]) #função potencia
         PHI = Gamma*(V[i]-Theta[i]) /(1.+ Gamma*(V[i]-Theta[i]))# função disparo
     
         rand = random.random()
         if rand < PHI:
             XX[i] = 1
             rho += 1 
-            
         else:
             XX[i] = 0
             
         Theta_med += Theta[i]
                     
-            
-    W_med = W_med/float(N*N)
-    Theta_med = Theta_med/float(N)  
+#     W_med = W_med/float(N*N)
+    W_med = np.mean(W)
+    Theta_med = np.mean(Theta)
     rho = rho/float(N)
 
     # se rho eh zero, entao um neuronio aleatorio eh ativado
